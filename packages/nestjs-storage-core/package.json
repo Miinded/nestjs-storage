@@ -1,0 +1,77 @@
+{
+  "name": "@miinded/nestjs-storage-core",
+  "version": "1.0.0",
+  "description": "Shared types, interfaces, and utilities for @miinded/nestjs-storage adapters.",
+  "license": "MIT",
+  "author": "Miinded",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miinded/nestjs-storage.git",
+    "directory": "packages/nestjs-storage-core"
+  },
+  "bugs": {
+    "url": "https://github.com/miinded/nestjs-storage/issues"
+  },
+  "homepage": "https://github.com/miinded/nestjs-storage/tree/main/packages/nestjs-storage-core",
+  "keywords": [
+    "nestjs",
+    "storage",
+    "storage-core",
+    "file-storage",
+    "typescript",
+    "storage-adapter"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/cjs/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "pnpm clean",
+    "build": "tsc --project tsconfig.cjs.json && tsc --project tsconfig.esm.json",
+    "format": "prettier --write \"{src,test}/**/*.ts\"",
+    "lint": "eslint \"{src,test}/**/*.ts\"",
+    "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
+    "test": "pnpm test:unit",
+    "test:unit": "node ../../config/run-jest.mjs unit",
+    "test:unit:debug": "node ../../config/run-jest.mjs unit:debug",
+    "test:int": "node ../../config/run-jest.mjs int",
+    "test:int:debug": "node ../../config/run-jest.mjs int:debug",
+    "test:e2e": "node ../../config/run-jest.mjs e2e",
+    "test:e2e:debug": "node ../../config/run-jest.mjs e2e:debug",
+    "test:debug": "node ../../config/run-jest.mjs debug",
+    "test:watch": "node ../../config/run-jest.mjs watch",
+    "test:coverage": "node ../../config/run-jest.mjs coverage"
+  },
+  "devDependencies": {
+    "@swc/core": "catalog:",
+    "@swc/jest": "catalog:",
+    "@types/jest": "catalog:",
+    "@types/node": "catalog:",
+    "@typescript-eslint/eslint-plugin": "catalog:",
+    "@typescript-eslint/parser": "catalog:",
+    "eslint": "catalog:",
+    "eslint-config-prettier": "catalog:",
+    "jest": "catalog:",
+    "prettier": "catalog:",
+    "rimraf": "catalog:",
+    "typescript": "catalog:"
+  }
+}

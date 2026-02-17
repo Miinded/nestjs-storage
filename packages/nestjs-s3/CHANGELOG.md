@@ -1,0 +1,12 @@
+# @miinded/nestjs-s3
+
+## 1.0.0
+
+### Major Changes
+
+- Add core package with shared types and security fixes. Implement StorageAdapter interface, dual builds, and path traversal protection.
+
+### Patch Changes
+
+- Updated dependencies
+  - @miinded/nestjs-storage-core@1.0.0

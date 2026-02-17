@@ -1,0 +1,55 @@
+{
+  "name": "@miinded/nestjs-storage",
+  "private": true,
+  "description": "Federated monorepo for Miinded NestJS storage packages.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miinded/nestjs-storage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/miinded/nestjs-storage/issues"
+  },
+  "homepage": "https://github.com/miinded/nestjs-storage",
+  "packageManager": "pnpm@10.29.3+sha512.498e1fb4cca5aa06c1dcf2611e6fafc50972ffe7189998c409e90de74566444298ffe43e6cd2acdc775ba1aa7cc5e092a8b7054c811ba8c5770f84693d33d2dc",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "build": "turbo run build",
+    "test": "pnpm test:unit && pnpm test:int && pnpm test:e2e",
+    "test:unit": "turbo run test:unit",
+    "test:int": "turbo run test:int",
+    "test:e2e": "turbo run test:e2e",
+    "test:coverage": "turbo run test:coverage",
+    "coverage:aggregate": "node ./scripts/aggregate-packages-coverage.mjs && nyc report --reporter html --reporter lcov",
+    "coverage:report": "pnpm test:coverage && pnpm coverage:aggregate",
+    "barrels:check": "node ./config/check-barrels.mjs",
+    "format": "prettier --config .prettierrc.json --write .",
+    "format:check": "prettier --config .prettierrc.json --check .",
+    "lint": "turbo run lint",
+    "deps:check": "node ./config/check-dependency-policy.mjs",
+    "ci:quality": "pnpm deps:check && pnpm barrels:check && pnpm lint && pnpm test:coverage && pnpm build",
+    "commitlint": "commitlint --from=HEAD~1 --to=HEAD",
+    "release": "pnpm deps:check && pnpm barrels:check && pnpm lint && pnpm test:coverage && changeset version && pnpm build && changeset publish"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,md,yml,yaml}": "prettier --config .prettierrc.json --write --ignore-unknown"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "catalog:",
+    "@typescript-eslint/parser": "catalog:",
+    "@commitlint/cli": "catalog:",
+    "@commitlint/config-conventional": "catalog:",
+    "@changesets/cli": "catalog:",
+    "eslint": "catalog:",
+    "eslint-config-prettier": "catalog:",
+    "husky": "catalog:",
+    "lint-staged": "catalog:",
+    "prettier": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:",
+    "nyc": "catalog:"
+  }
+}
