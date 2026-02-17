@@ -11,6 +11,7 @@ describe('GoogleDriveService', () => {
     const exportFn = jest.fn();
     const del = jest.fn();
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (service as any).driveClient = {
       files: {
         get,
@@ -66,7 +67,9 @@ describe('GoogleDriveService', () => {
   it('listFiles returns deterministic sorted output', async () => {
     const { service } = makeService();
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     jest.spyOn(service as any, '_listFolders').mockResolvedValue({ '/base': 'folderA' });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     jest.spyOn(service as any, '_listFilesInFolder').mockResolvedValue([
       { id: '2', name: 'z.txt', mimeType: 'text/plain', size: '2' },
       { id: '1', name: 'a.txt', mimeType: 'text/plain', size: '1' },

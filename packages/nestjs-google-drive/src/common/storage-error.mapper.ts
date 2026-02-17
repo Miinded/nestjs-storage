@@ -12,11 +12,15 @@ export class GoogleDriveProviderError extends StorageProviderError {
 }
 
 function classifyGoogleDriveError(error: unknown): StorageErrorCategory {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const status = Number((error as any)?.response?.status ?? (error as any)?.status ?? (error as any)?.code ?? 0);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const code = String((error as any)?.code ?? '').toLowerCase();
   const reason = String(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (error as any)?.errors?.[0]?.reason ?? (error as any)?.response?.data?.error?.status ?? '',
   ).toLowerCase();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const message = String((error as any)?.message ?? '').toLowerCase();
 
   if (status === 404 || reason.includes('notfound') || code.includes('notfound')) {

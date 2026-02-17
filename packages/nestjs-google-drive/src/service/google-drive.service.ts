@@ -71,6 +71,7 @@ export class GoogleDriveService implements StorageAdapter {
       if (!file) {
         const parents = folder ? [folder.key] : [];
 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const requestBody: any = {
           name: basename(normalizedKey),
           parents,

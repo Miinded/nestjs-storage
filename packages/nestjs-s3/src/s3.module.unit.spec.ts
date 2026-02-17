@@ -13,6 +13,7 @@ describe('S3Module', () => {
   };
 
   it('throws when useFactory is missing', () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     expect(() => S3Module.registerAsync({} as any)).toThrow('[S3Module] registerAsync requires a useFactory function');
   });
 
@@ -25,6 +26,7 @@ describe('S3Module', () => {
       inject: ['CONFIG_TOKEN'],
     });
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const providers = moduleDef.providers as any[];
     const optionsProvider = providers.find((provider) => provider?.provide === S3_MODULE_OPTIONS);
     const connectionProvider = providers.find((provider) => provider?.provide === getS3ConnectionToken(connectionName));
@@ -65,13 +67,16 @@ describe('S3Module', () => {
       useFactory: () => validConfig,
     });
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const providers = moduleDef.providers as any[];
     const connectionProvider = providers.find((provider) => provider?.provide === getS3ConnectionToken(connectionName));
 
     const service = await connectionProvider.useFactory(validConfig);
 
     expect(service).toBeInstanceOf(S3Service);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     expect((service as any).bucket).toBe(validConfig.bucket);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     expect((service as any).s3).toBeDefined();
   });
 });

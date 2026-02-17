@@ -12,9 +12,11 @@ export class S3ProviderError extends StorageProviderError {
 }
 
 function classifyS3Error(error: unknown): StorageErrorCategory {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const status = Number(
     (error as any)?.$metadata?.httpStatusCode ?? (error as any)?.statusCode ?? (error as any)?.status ?? 0,
   );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const code = String((error as any)?.code ?? (error as any)?.name ?? '').toLowerCase();
 
   if (status === 404 || code.includes('notfound') || code.includes('nosuchkey')) {
