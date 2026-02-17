@@ -117,6 +117,7 @@ describe('GoogleDriveService', () => {
 
   it('uploadFile creates a new file when key does not exist', async () => {
     const { service, create } = makeService();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     jest.spyOn(service as any, '_createFolderRecursive').mockResolvedValue(undefined);
     jest.spyOn(service, 'listFiles').mockResolvedValue([{ name: 'path/', size: 0, key: 'folder-id' }]);
     create.mockResolvedValue({ data: { id: 'created-id' } });
@@ -129,6 +130,7 @@ describe('GoogleDriveService', () => {
 
   it('uploadFile updates existing file when key already exists', async () => {
     const { service, update } = makeService();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     jest.spyOn(service as any, '_createFolderRecursive').mockResolvedValue(undefined);
     jest.spyOn(service, 'listFiles').mockResolvedValue([{ name: 'path/existing.txt', size: 12, key: 'file-id' }]);
     update.mockResolvedValue({ data: { id: 'updated-id' } });
@@ -169,6 +171,7 @@ describe('GoogleDriveService', () => {
 
       service.setConnection('client@example.com', 'private-key-content');
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       expect((service as any).driveClient).toBeDefined();
     });
   });
@@ -200,6 +203,7 @@ describe('GoogleDriveService', () => {
   describe('uploadFile with isPublic', () => {
     it('creates public file with permissions', async () => {
       const { service, create } = makeService();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       jest.spyOn(service as any, '_createFolderRecursive').mockResolvedValue(undefined);
       jest.spyOn(service, 'listFiles').mockResolvedValue([{ name: 'public/', size: 0, key: 'folder-id' }]);
       create.mockResolvedValue({ data: { id: 'public-file-id' } });

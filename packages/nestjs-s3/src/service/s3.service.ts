@@ -63,6 +63,7 @@ export class S3Service implements StorageAdapter {
         }),
       );
     } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const code = String((error as any)?.code ?? (error as any)?.name ?? '');
       if (code === 'BucketAlreadyOwnedByYou' || code === 'BucketAlreadyExists') {
         return;

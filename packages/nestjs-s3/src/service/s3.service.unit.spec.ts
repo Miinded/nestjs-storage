@@ -6,7 +6,9 @@ describe('S3Service', () => {
     const service = new S3Service();
     const send = jest.fn();
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (service as any).s3 = { send };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (service as any).bucket = 'bucket';
 
     return { service, send };
@@ -91,7 +93,9 @@ describe('S3Service', () => {
 
       service.setConnection('key', 'secret', 'http://localhost:9000', 'us-east-1', 'my-bucket');
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       expect((service as any).bucket).toBe('my-bucket');
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       expect((service as any).s3).toBeDefined();
     });
 
@@ -100,6 +104,7 @@ describe('S3Service', () => {
 
       service.setConnection('key', 'secret', 'http://localhost:9000', 'us-east-1');
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       expect((service as any).bucket).toBe('private-bucket');
     });
   });
@@ -118,6 +123,7 @@ describe('S3Service', () => {
   describe('uploadPublicFile', () => {
     it('calls uploadFile with public flag', async () => {
       const service = new S3Service();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const uploadSpy = jest.spyOn(service, 'uploadFile').mockResolvedValue({} as any);
 
       await service.uploadPublicFile('public.txt', Buffer.from('data'), 'text/plain');
@@ -129,6 +135,7 @@ describe('S3Service', () => {
   describe('uploadPrivateFile', () => {
     it('calls uploadFile with private flag', async () => {
       const service = new S3Service();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const uploadSpy = jest.spyOn(service, 'uploadFile').mockResolvedValue({} as any);
 
       await service.uploadPrivateFile('private.txt', Buffer.from('data'), 'text/plain');
