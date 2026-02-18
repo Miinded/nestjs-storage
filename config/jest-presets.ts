@@ -3,7 +3,7 @@ import type { Config } from 'jest';
 export const baseJestConfig: Config = {
   verbose: true,
   testEnvironment: 'node',
-  moduleFileExtensions: ['js', 'ts'],
+  moduleFileExtensions: ['js', 'mjs', 'cjs', 'ts'],
   moduleNameMapper: {
     '^(\\.{1,2}/.*)\\.ts$': '$1',
   },
@@ -18,7 +18,7 @@ export const baseJestConfig: Config = {
           type: 'commonjs',
         },
         jsc: {
-          target: 'es2022',
+          target: 'es2024',
           parser: {
             syntax: 'typescript',
             decorators: true,
