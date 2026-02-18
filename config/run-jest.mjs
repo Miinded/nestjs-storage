@@ -35,6 +35,7 @@ if (baseMode === 'coverage') {
 
 const result = spawnSync('pnpm', args, {
   stdio: 'inherit',
+  shell: true,
 });
 
 if (result.error) {

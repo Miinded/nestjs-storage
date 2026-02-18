@@ -1,4 +1,4 @@
-import { unitJestConfig } from '../../config/jest-presets.mjs';
+import { unitJestConfig } from '../../config/jest-presets';
 
 export default {
   ...unitJestConfig,

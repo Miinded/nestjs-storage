@@ -1,4 +1,4 @@
-import { e2eJestConfig } from '../../config/jest-presets.mjs';
+import { e2eJestConfig } from '../../config/jest-presets';
 
 export default {
   ...e2eJestConfig,

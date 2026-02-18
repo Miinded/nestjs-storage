@@ -1,4 +1,4 @@
-import { intJestConfig } from '../../config/jest-presets.mjs';
+import { intJestConfig } from '../../config/jest-presets';
 
 export default {
   ...intJestConfig,
