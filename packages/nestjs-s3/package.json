@@ -1,0 +1,105 @@
+{
+  "name": "@miinded/nestjs-s3",
+  "version": "1.0.0",
+  "description": "Production-ready NestJS module for AWS S3, MinIO, and S3-compatible object storage. Features automatic bucket creation, presigned URLs, streaming uploads, and full TypeScript support.",
+  "license": "MIT",
+  "author": "Miinded",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miinded/nestjs-storage.git",
+    "directory": "packages/nestjs-s3"
+  },
+  "bugs": {
+    "url": "https://github.com/miinded/nestjs-storage/issues"
+  },
+  "homepage": "https://github.com/miinded/nestjs-storage/tree/main/packages/nestjs-s3",
+  "keywords": [
+    "nestjs",
+    "nest",
+    "s3",
+    "aws",
+    "aws-s3",
+    "minio",
+    "object-storage",
+    "file-storage",
+    "file-upload",
+    "presigned-url",
+    "streaming",
+    "typescript",
+    "storage-module",
+    "cloud-storage"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/cjs/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "pnpm clean",
+    "build": "tsc --project tsconfig.cjs.json && tsc --project tsconfig.esm.json",
+    "format": "prettier --write \"{src,test}/**/*.ts\"",
+    "lint": "eslint \"{src,test}/**/*.ts\"",
+    "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
+    "test": "pnpm test:unit",
+    "test:unit": "node ../../config/run-jest.mjs unit",
+    "test:unit:debug": "node ../../config/run-jest.mjs unit:debug",
+    "test:int": "node ../../config/run-jest.mjs int",
+    "test:int:debug": "node ../../config/run-jest.mjs int:debug",
+    "test:e2e": "node ../../config/run-jest.mjs e2e",
+    "test:e2e:debug": "node ../../config/run-jest.mjs e2e:debug",
+    "test:debug": "node ../../config/run-jest.mjs debug",
+    "test:watch": "node ../../config/run-jest.mjs watch",
+    "test:coverage": "node ../../config/run-jest.mjs coverage"
+  },
+  "dependencies": {
+    "@miinded/nestjs-storage-core": "workspace:^",
+    "@aws-sdk/client-s3": "^3.990.0",
+    "@aws-sdk/lib-storage": "^3.990.0",
+    "@aws-sdk/s3-request-presigner": "^3.990.0"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^10.3.0 || ^11.0.0",
+    "@nestjs/core": "^10.3.0 || ^11.0.0",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@swc/core": "catalog:",
+    "@swc/jest": "catalog:",
+    "@nestjs/common": "catalog:",
+    "@nestjs/core": "catalog:",
+    "@nestjs/platform-express": "catalog:",
+    "@nestjs/testing": "catalog:",
+    "@types/express": "catalog:",
+    "@types/jest": "catalog:",
+    "@types/node": "catalog:",
+    "@types/supertest": "catalog:",
+    "@typescript-eslint/eslint-plugin": "catalog:",
+    "@typescript-eslint/parser": "catalog:",
+    "eslint": "catalog:",
+    "eslint-config-prettier": "catalog:",
+    "jest": "catalog:",
+    "prettier": "catalog:",
+    "rimraf": "catalog:",
+    "rxjs": "catalog:",
+    "supertest": "catalog:",
+    "ts-node": "catalog:",
+    "typescript": "catalog:"
+  }
+}
