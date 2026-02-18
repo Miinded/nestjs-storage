@@ -72,6 +72,7 @@
     "jest": "catalog:",
     "prettier": "catalog:",
     "rimraf": "catalog:",
+    "ts-node": "catalog:",
     "typescript": "catalog:"
   }
 }
