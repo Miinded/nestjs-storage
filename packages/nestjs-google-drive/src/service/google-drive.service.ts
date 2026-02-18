@@ -306,7 +306,11 @@ export class GoogleDriveService implements StorageAdapter {
       const parent = data.find((parentItem) => parentItem.id === item?.parents?.[0]);
       const parentPath = buildFullPath(parent, data);
 
-      return parentPath === '' ? item.name ?? '' : `${parentPath}/${item.name ?? ''}`.replace('//', '/');
+      const itemName = item.name ?? '';
+      if (parentPath === '') {
+        return itemName;
+      }
+      return `${parentPath}/${itemName}`.replace('//', '/');
     };
 
     const idMap: Record<string, string> = {};
