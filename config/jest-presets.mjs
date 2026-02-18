@@ -16,7 +16,7 @@ export const baseJestConfig = {
           type: 'commonjs',
         },
         jsc: {
-          target: 'es2021',
+          target: 'es2022',
           parser: {
             syntax: 'typescript',
             decorators: true,
