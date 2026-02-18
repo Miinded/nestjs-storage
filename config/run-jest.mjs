@@ -36,6 +36,10 @@ if (baseMode === 'coverage') {
 const result = spawnSync('pnpm', args, {
   stdio: 'inherit',
   shell: true,
+  env: {
+    ...process.env,
+    TS_NODE_PROJECT: new URL('../tsconfig.jest.json', import.meta.url).pathname,
+  },
 });
 
 if (result.error) {
