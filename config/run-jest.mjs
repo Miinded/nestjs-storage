@@ -1,4 +1,5 @@
 import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
 const mode = process.argv[2] ?? 'unit';
 
@@ -38,7 +39,7 @@ const result = spawnSync('pnpm', args, {
   shell: true,
   env: {
     ...process.env,
-    TS_NODE_PROJECT: new URL('../tsconfig.jest.json', import.meta.url).pathname,
+    TS_NODE_PROJECT: fileURLToPath(new URL('../tsconfig.jest.json', import.meta.url)),
   },
 });
 
