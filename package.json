@@ -23,8 +23,6 @@
     "test:int": "turbo run test:int",
     "test:e2e": "turbo run test:e2e",
     "test:coverage": "turbo run test:coverage",
-    "coverage:aggregate": "node ./scripts/aggregate-packages-coverage.mjs && nyc report --reporter html --reporter lcov",
-    "coverage:report": "pnpm test:coverage && pnpm coverage:aggregate",
     "barrels:check": "node ./config/check-barrels.mjs",
     "format": "prettier --config .prettierrc.json --write .",
     "format:check": "prettier --config .prettierrc.json --check .",
@@ -49,7 +47,6 @@
     "lint-staged": "catalog:",
     "prettier": "catalog:",
     "turbo": "catalog:",
-    "typescript": "catalog:",
-    "nyc": "catalog:"
+    "typescript": "catalog:"
   }
 }
