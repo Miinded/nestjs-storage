@@ -72,7 +72,7 @@
     "@miinded/nestjs-storage-core": "workspace:^",
     "@aws-sdk/client-s3": "^3.990.0",
     "@aws-sdk/lib-storage": "^3.990.0",
-    "@aws-sdk/s3-request-presigner": "^3.990.0"
+    "@aws-sdk/s3-request-presigner": "^3.992.0"
   },
   "peerDependencies": {
     "@nestjs/common": "^10.3.0 || ^11.0.0",
