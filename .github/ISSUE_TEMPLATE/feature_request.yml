@@ -17,6 +17,7 @@ body:
       options:
         - '@miinded/nestjs-s3'
         - '@miinded/nestjs-google-drive'
+        - '@miinded/nestjs-storage-core'
         - Both / monorepo-wide
     validations:
       required: true
@@ -42,6 +43,24 @@ body:
     attributes:
       label: Alternatives considered
       description: Any alternative solutions or workarounds you have considered.
+    validations:
+      required: false
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node.js version
+      description: Run `node --version`.
+      placeholder: e.g. 22.14.0
+    validations:
+      required: false
+
+  - type: input
+    id: nestjs-version
+    attributes:
+      label: NestJS version
+      description: Run `pnpm ls @nestjs/core` or check your `package.json`.
+      placeholder: e.g. 11.1.0
     validations:
       required: false
 
