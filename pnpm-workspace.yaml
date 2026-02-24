@@ -4,7 +4,7 @@ packages:
 catalog:
   '@changesets/cli': ^2.29.8
   '@commitlint/cli': ^20.4.1
-  '@commitlint/config-conventional': ^20.4.1
+  '@commitlint/config-conventional': ^20.4.2
   '@types/express': ^5.0.6
   '@types/jest': ^30.0.0
   '@types/node': ^25.2.3
