@@ -1,5 +1,11 @@
 # @miinded/nestjs-storage-core
 
+## 1.0.1
+
+### Patch Changes
+
+- 4ccd657: fix: add NPM publishing support and CI improvements
+
 ## 1.0.0
 
 ### Major Changes

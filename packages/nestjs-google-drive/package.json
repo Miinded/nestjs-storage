@@ -1,6 +1,6 @@
 {
   "name": "@miinded/nestjs-google-drive",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Production-ready NestJS module for Google Drive integration. Features file uploads, downloads, sharing, folder management, and full TypeScript support with service account authentication.",
   "license": "MIT",
   "author": "Miinded",
