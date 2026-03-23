@@ -6,13 +6,13 @@
   "author": "Miinded",
   "repository": {
     "type": "git",
-    "url": "https://github.com/miinded/nestjs-storage.git",
+    "url": "https://github.com/Miinded/nestjs-storage.git",
     "directory": "packages/nestjs-s3"
   },
   "bugs": {
-    "url": "https://github.com/miinded/nestjs-storage/issues"
+    "url": "https://github.com/Miinded/nestjs-storage/issues"
   },
-  "homepage": "https://github.com/miinded/nestjs-storage/tree/main/packages/nestjs-s3",
+  "homepage": "https://github.com/Miinded/nestjs-storage/tree/main/packages/nestjs-s3",
   "keywords": [
     "nestjs",
     "nest",

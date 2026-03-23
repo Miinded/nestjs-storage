@@ -6,13 +6,13 @@
   "author": "Miinded",
   "repository": {
     "type": "git",
-    "url": "https://github.com/miinded/nestjs-storage.git",
+    "url": "https://github.com/Miinded/nestjs-storage.git",
     "directory": "packages/nestjs-google-drive"
   },
   "bugs": {
-    "url": "https://github.com/miinded/nestjs-storage/issues"
+    "url": "https://github.com/Miinded/nestjs-storage/issues"
   },
-  "homepage": "https://github.com/miinded/nestjs-storage/tree/main/packages/nestjs-google-drive",
+  "homepage": "https://github.com/Miinded/nestjs-storage/tree/main/packages/nestjs-google-drive",
   "keywords": [
     "nestjs",
     "nest",

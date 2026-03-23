@@ -40,7 +40,5 @@ pnpm-debug.log*
 *.temp
 .cache
 
-# Changeset
-.changeset/*.md
-!.changeset/config.json
-!.changeset/README.md
+# Changeset - allow all .md files for changesets
+# .changeset/*.md is needed for version bumping
