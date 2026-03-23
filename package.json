@@ -29,7 +29,7 @@
     "lint": "turbo run lint",
     "deps:check": "node ./config/check-dependency-policy.mjs",
     "ci:quality": "pnpm deps:check && pnpm barrels:check && pnpm lint && pnpm test:coverage && pnpm build",
-    "commitlint": "commitlint --from=HEAD~1 --to=HEAD",
+    "commitlint": "commitlint",
     "release": "pnpm deps:check && pnpm barrels:check && pnpm lint && pnpm test:coverage && changeset version && pnpm build && changeset publish"
   },
   "lint-staged": {
