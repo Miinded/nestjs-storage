@@ -1,6 +1,6 @@
 {
   "name": "@miinded/nestjs-storage-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared types, interfaces, and utilities for @miinded/nestjs-storage adapters.",
   "license": "MIT",
   "author": "Miinded",

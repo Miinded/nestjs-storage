@@ -1,6 +1,6 @@
 {
   "name": "@miinded/nestjs-s3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Production-ready NestJS module for AWS S3, MinIO, and S3-compatible object storage. Features automatic bucket creation, presigned URLs, streaming uploads, and full TypeScript support.",
   "license": "MIT",
   "author": "Miinded",
