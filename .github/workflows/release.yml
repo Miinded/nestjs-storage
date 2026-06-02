@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Enable Corepack
         run: corepack enable
@@ -42,7 +42,7 @@ jobs:
         run: corepack prepare pnpm@10.29.3 --activate
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: pnpm
@@ -50,7 +50,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Turbo cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: .turbo
           key: turbo-${{ runner.os }}-release-${{ github.sha }}

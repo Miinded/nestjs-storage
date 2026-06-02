@@ -2,7 +2,6 @@ name: Quality
 
 on:
   pull_request:
-  push:
     branches:
       - main
 
@@ -19,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -30,14 +29,14 @@ jobs:
         run: corepack prepare pnpm@10.29.3 --activate
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
           cache-dependency-path: pnpm-lock.yaml
 
       - name: Turbo cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: .turbo
           key: turbo-${{ runner.os }}-node${{ matrix.node-version }}-${{ github.sha }}
@@ -60,7 +59,6 @@ jobs:
         run: pnpm format:check
 
       - name: Commitlint
-        if: github.event_name == 'pull_request'
         run: pnpm commitlint --from=origin/${{ github.base_ref }} --to=HEAD
 
       - name: Build
@@ -76,8 +74,8 @@ jobs:
         run: pnpm test:e2e
 
       - name: Upload coverage to Codecov
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && matrix.node-version == 24
-        uses: codecov/codecov-action@v4
+        if: matrix.node-version == 24
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: ./packages
