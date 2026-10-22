@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -36,7 +36,7 @@ jobs:
           cache-dependency-path: pnpm-lock.yaml
 
       - name: Turbo cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: .turbo
           key: turbo-${{ runner.os }}-node${{ matrix.node-version }}-${{ github.sha }}
@@ -75,7 +75,7 @@ jobs:
 
       - name: Upload coverage to Codecov
         if: matrix.node-version == 24
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v7
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: ./packages
