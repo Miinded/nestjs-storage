@@ -6,7 +6,7 @@ Contributions are welcome! This guide will help you get up and running on the pr
 
 | Tool    | Version |
 | ------- | ------- |
-| Node.js | `>= 20` |
+| Node.js | `>= 24` |
 | pnpm    | `>= 10` |
 
 > **Tip:** the exact pnpm version is pinned via `packageManager` in the root `package.json`. Corepack will pick it up automatically if enabled (`corepack enable`).

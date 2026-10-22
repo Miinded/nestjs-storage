@@ -14,7 +14,7 @@ A unified storage abstraction layer for NestJS applications, providing a consist
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/node-%3E%3D20-brightgreen" alt="Node.js >= 20" />
+  <img src="https://img.shields.io/badge/node-%3E%3D24-brightgreen" alt="Node.js >= 24" />
   <img src="https://img.shields.io/badge/NestJS-10.x%20%7C%2011.x-ea2845" alt="NestJS 10.x | 11.x" />
   <img src="https://img.shields.io/badge/TypeScript-5.x-3178c6" alt="TypeScript 5.x" />
   <img src="https://img.shields.io/badge/pnpm-monorepo-f69220" alt="pnpm monorepo" />
@@ -24,7 +24,7 @@ A unified storage abstraction layer for NestJS applications, providing a consist
 
 | Dependency | Supported versions |
 | ---------- | ------------------ |
-| Node.js    | `>= 20`            |
+| Node.js    | `>= 24`            |
 | NestJS     | `10.x` · `11.x`    |
 | TypeScript | `5.x`              |
 | RxJS       | `7.x`              |

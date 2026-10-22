@@ -30,7 +30,7 @@
     "cloud-storage"
   ],
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "publishConfig": {
     "access": "public"
@@ -69,10 +69,10 @@
     "test:coverage": "node ../../config/run-jest.mjs coverage"
   },
   "dependencies": {
-    "@miinded/nestjs-storage-core": "workspace:^",
-    "@aws-sdk/client-s3": "^3.990.0",
-    "@aws-sdk/lib-storage": "^3.990.0",
-    "@aws-sdk/s3-request-presigner": "^3.990.0"
+    "@aws-sdk/client-s3": "^3.1156.0",
+    "@aws-sdk/lib-storage": "^3.1156.0",
+    "@aws-sdk/s3-request-presigner": "^3.1156.0",
+    "@miinded/nestjs-storage-core": "workspace:^"
   },
   "peerDependencies": {
     "@nestjs/common": "^10.3.0 || ^11.0.0",
@@ -80,12 +80,12 @@
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
-    "@swc/core": "catalog:",
-    "@swc/jest": "catalog:",
     "@nestjs/common": "catalog:",
     "@nestjs/core": "catalog:",
     "@nestjs/platform-express": "catalog:",
     "@nestjs/testing": "catalog:",
+    "@swc/core": "catalog:",
+    "@swc/jest": "catalog:",
     "@types/express": "catalog:",
     "@types/jest": "catalog:",
     "@types/node": "catalog:",
